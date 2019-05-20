@@ -26,6 +26,14 @@
                         <v-list-tile-title>Github</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
+                <v-list-tile href="mailto:zeks1992@gmail.com" target="_blank">
+                    <v-list-tile-action>
+                        <v-icon large>far fa-envelope</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Email</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
             </v-list>
         </v-navigation-drawer>
         <v-toolbar app :fixed="toolbar.fixed" :clipped-left="toolbar.clippedLeft" scroll-off-screen dark>
@@ -138,8 +146,7 @@
             </v-container>
         </v-content>
         <v-footer app :fixed="footer.fixed" :clipped-left="footer.clippedLeft" dark>
-            <span class="caption mx-3"> Developed by Zeks, &copy; 2019</span>
-            <v-spacer></v-spacer>
+            <div class="mx-auto"> Developed by Zeks, &copy; 2019</div>
         </v-footer>
     </v-app>
 </template>
@@ -211,7 +218,7 @@ export default {
 
     created() {
         axios
-            .get(`https://api.myjson.com/bins/ch9oa`)
+            .get(`https://api.myjson.com/bins/dbmhy`)
             .then(response => {
                 this.movies = _.uniqBy(response.data, "title");
                 Console.log(this.movies);
