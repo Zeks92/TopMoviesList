@@ -34,6 +34,14 @@
                         <v-list-tile-title>Email</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
+                <v-list-tile href="https://www.xing.com/profile/Zeljko_Lazovic/" target="_blank">
+                    <v-list-tile-action>
+                        <v-icon large>fab fa-xing</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title>Xing</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
             </v-list>
         </v-navigation-drawer>
         <v-toolbar app :fixed="toolbar.fixed" :clipped-left="toolbar.clippedLeft" scroll-off-screen dark>
@@ -218,7 +226,7 @@ export default {
 
     created() {
         axios
-            .get(`https://api.myjson.com/bins/dbmhy`)
+            .get(`https://api.myjson.com/bins/drf49`)
             .then(response => {
                 this.movies = _.uniqBy(response.data, "title");
                 Console.log(this.movies);
