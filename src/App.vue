@@ -229,7 +229,7 @@ export default {
             .get(`https://api.myjson.com/bins/drf49`)
             .then(response => {
                 this.movies = _.uniqBy(response.data, "title");
-                Console.log(this.movies);
+                console.log(this.movies);
             })
             .catch(e => {
                 this.errors.push(e);

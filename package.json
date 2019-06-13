@@ -29,9 +29,12 @@
     "vuetify-loader": "^1.0.5"
   },
   "eslintConfig": {
-    "rules": {},
+    "rules": {
+      "no-console": 0
+    },
     "root": true,
     "env": {
+      "browser": true,
       "node": true
     },
     "extends": [
