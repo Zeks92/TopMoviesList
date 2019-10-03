@@ -1,6 +1,8 @@
 <template>
     <v-app>
-        <v-navigation-drawer :clipped="drawer.clipped" :fixed="drawer.fixed" :mini-variant="drawer.mini" v-model="drawer.open" app>
+        <v-navigation-drawer :clipped="drawer.clipped" :fixed="drawer.fixed" :mini-variant="drawer.mini" v-model="drawer.open" app
+            class="blue-grey lighten-5"
+        >
             <v-list>
                 <v-list-tile href="https://www.facebook.com/zeljko.lazovic.12" target="_blank">
                     <v-list-tile-action>
@@ -44,7 +46,9 @@
                 </v-list-tile>
             </v-list>
         </v-navigation-drawer>
-        <v-toolbar app :fixed="toolbar.fixed" :clipped-left="toolbar.clippedLeft" scroll-off-screen dark>
+        <v-toolbar app :fixed="toolbar.fixed" :clipped-left="toolbar.clippedLeft" scroll-off-screen dark
+            class="red darken-1"
+        >
             <v-toolbar-side-icon @click.stop="toggleDrawer"></v-toolbar-side-icon>
             <v-toolbar-title v-if="!isMobile">Top Movies List</v-toolbar-title>
             <v-spacer></v-spacer>
@@ -63,7 +67,9 @@
                 </v-list>
             </v-menu>
         </v-toolbar>
-        <v-content>
+        <v-content
+            class="blue-grey lighten-5"
+        >
             <v-container fluid fill-height>
                 <v-layout justify-center>
                     <v-flex shrink>
@@ -101,18 +107,16 @@
                                             </div>
                                             {{props.item.writer}}
                                             <div class="font-weight-bold">Oscar nominations
-                                                <h5>{{props.item.oscarnominees}}</h5>
+                                                <h4>{{props.item.oscarnominees}}</h4>
                                             </div>
                                             <div class="font-weight-bold">Oscar wins
-                                                <h5>{{props.item.oscarwin}}</h5>
+                                                <h4>{{props.item.oscarwin}}</h4>
                                             </div>
-                                            <div>
-                                                <h4>Trivia</h4>
-                                                <p>{{props.item.trivia}}</p>
+                                            <div class="font-weight-bold">Trivia
+                                                <h4>{{props.item.trivia}}</h4>
                                             </div>
-                                            <div>
-                                                <h4>Quote</h4> 
-                                                <p>{{props.item.quote}}</p>
+                                            <div class="font-weight-bold">Quote
+                                                <h4>{{props.item.quote}}</h4>
                                             </div>
                                         </v-card-text>
                                     </v-card>
@@ -153,7 +157,9 @@
                 </v-layout>
             </v-container>
         </v-content>
-        <v-footer app :fixed="footer.fixed" :clipped-left="footer.clippedLeft" dark>
+        <v-footer app :fixed="footer.fixed" :clipped-left="footer.clippedLeft" dark
+            class="red darken-1"
+        >
             <div class="mx-auto"> Developed by Zeks, &copy; 2019</div>
         </v-footer>
     </v-app>
@@ -226,7 +232,7 @@ export default {
 
     created() {
         axios
-            .get(`https://api.myjson.com/bins/drf49`)
+            .get(`https://api.myjson.com/bins/pyb2v`)
             .then(response => {
                 this.movies = _.uniqBy(response.data, "title");
                 console.log(this.movies);
