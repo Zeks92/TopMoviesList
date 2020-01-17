@@ -81,6 +81,7 @@
                                         <td>{{ props.item.release_year }}</td>
                                         <td>{{ props.item.director }}</td>
                                         <td>{{ props.item.genre }}</td>
+                                        <td>{{ props.item.votes }}
                                         <td>{{ props.item.IMDBrating }}</td>
                                     </tr>
                                     <tr v-else @click="dialog = true; props.expanded = !props.expanded">
@@ -90,6 +91,7 @@
                                                 <li class="flex-item" data-label="Year">{{ props.item.release_year }}</li>
                                                 <li class="flex-item" data-label="Director">{{ props.item.director }}</li>
                                                 <li class="flex-item" data-label="Genre">{{ props.item.genre }}</li>
+                                                <li class="flex-item" data-label="Votes">{{ props.item.votes }}
                                                 <li class="flex-item" data-label="IMDB rating"> {{props.item.IMDBrating}}</li>
                                             </ul>
                                         </td>
@@ -197,6 +199,10 @@ export default {
                     value: "genre"
                 },
                 {
+                    text: "Votes",
+                    value: "votes"
+                },
+                {
                     text: "IMDB rating",
                     value: "IMDBrating"
                 }
@@ -232,7 +238,7 @@ export default {
 
     created() {
         axios
-            .get(`https://api.myjson.com/bins/pyb2v`)
+            .get(`https://api.myjson.com/bins/yakpu`)
             .then(response => {
                 this.movies = _.uniqBy(response.data, "title");
                 console.log(this.movies);
